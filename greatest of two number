@@ -8,8 +8,11 @@ public class Main
 	    if(a>b){
 	        System.out.print(a);
 	    }
-	    else{
+	    else if(b>a){
 	        System.out.print(b);
+	    }
+	    else {
+	        System.out.print("Equals");
 	    }
 	}
 }
