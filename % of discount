@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        double fin=0;
+        double bill=0;
+        int amt=sc.nextInt();
+        int dis;//=sc.nextInt();
+        if(amt>=1000 && amt<=2000){
+            bill=amt*0.25;
+        }
+        else if(amt>2000 && amt<=4000){
+            bill=amt*0.50;
+        }
+        else if(amt>4000 && amt<=6000){
+            bill=amt*0.75;
+        }
+        fin=amt-bill;
+        System.out.print(fin);
+    }
+}
