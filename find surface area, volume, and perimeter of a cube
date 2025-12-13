@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Main
+
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	      int a;
+        a = sc.nextInt();
+        int area = a*a*a;
+        int sa = 6*a*a;
+        int peri = 12*a;
+        System.out.println("Area of the Cube:" + area);
+        System.out.println("Surface area of the Cube:" + sa);
+        System.out.println("Perimeter of the Cube:" + peri);
+
+	}
+}
