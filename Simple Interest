@@ -1,0 +1,11 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int prin=sc.nextInt();
+        float intrest=sc.nextFloat();
+        int years=sc.nextInt();
+        double si=(prin*intrest*years)/100;
+        System.out.print(si);
+    }
+}
