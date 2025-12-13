@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int temp=sc.nextInt();
+        if(temp>=100 && temp<200){
+            System.out.print("Fever is high");
+        }
+        else if(temp<100 && temp>50){
+            System.out.print("Normal");
+        }
+        else{
+            System.out.print("Invalid Input");
+        }
+    }
+}
