@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int speed=sc.nextInt();
+	if(speed >=100 &&  speed <=200){
+	    System.out.print("Over-speeding! Fine imposed.");
+	}
+	else if(speed <100 && speed >0){
+	    System.out.print("Speed is within limit");
+	}
+
+	else {
+	    System.out.print("Invalid Input");
+	}
+	}
+}
