@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int age=sc.nextInt();
+	if(age >=5 &&  age<=18){
+	    System.out.print("child");
+	}
+	else if(age>18 && age<=55){
+	    System.out.print("adult");
+	}
+	else if(age>55 && age<=120){
+	    System.out.print("senior");
+	}
+	else {
+	    System.out.print("Invalid Input");
+	}
+	}
+}
