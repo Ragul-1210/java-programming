@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int bal=1000;
+        switch(a){
+            case 1:
+                System.out.println(bal);
+                break;
+            case 2:
+                int dep=sc.nextInt();
+                dep=dep+bal;
+                System.out.print(dep);
+                break;
+            case 3:
+                int wid=sc.nextInt();
+                if(wid<=bal){
+                System.out.print(wid);
+                }
+                else if(wid>bal){
+                System.out.print("Insuffient balance");
+                }
+                break;
+            case 4:
+                System.out.print("exit");
+                break;
+                default:
+                System.out.print("Invalid");
+       }
+    }
+}
