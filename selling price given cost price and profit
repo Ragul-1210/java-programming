@@ -1,0 +1,10 @@
+import java.util.Scanner;//selling price given cost price and profit
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int cp=sc.nextInt();
+        int profit=sc.nextInt();
+        int sp=cp+profit;
+        System.out.print("Selling Price:"+sp);
+    }
+}
