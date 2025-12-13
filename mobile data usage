@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int data=sc.nextInt();
+        if(data<=0){
+            System.out.print("Data over");
+        }
+        else if(data <80 && data >=40){
+            System.out.print("Half consumed");
+        }
+        else if(data <40 && data >=1){
+            System.out.print("low data");
+        }
+        else{
+            System.out.print("Invalid Input");
+        }
+    }
+}
