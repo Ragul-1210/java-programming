@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner src=new Scanner(System.in);
+	  
+        int a,b,c;
+        a = sc.nextInt();
+        b = sc.nextInt();
+        c = sc.nextInt();
+        System.out.println(((a>b) && (a>c))?"A is the greastest number":(b>a)?"B is the greatest number":"C is the greatest number");
+
+	}
+}
