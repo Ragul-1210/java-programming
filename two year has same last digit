@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Main
+
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int a=sc.nextInt();
+	    int b=sc.nextInt();
+	    int lasta=Math.abs(a%10);
+	    int lastb=Math.abs(b%10);
+	    if(lasta==lastb){
+	        System.out.print("yes");
+	    }
+	    else{
+	        System.out.print("no");
+	    }
+	       
+	}
+}
