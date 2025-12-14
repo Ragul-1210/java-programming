@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new.Scanner(System.in);
+	int a;
+        a = sc.nextInt();
+        int b = a/500;
+        int c = a%500/200;
+        int d = a%500%200/100;
+        System.out.println("No of 500rs Notes:" + b);
+        System.out.println("No of 200rs Notes:" + c);
+        System.out.println("No of 100rs Notes:" + d);
+	}
+}
