@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int a=sc.nextInt();
+	    int n=a;
+	    int digit=0;
+	    //int fact=1;
+	    int sum=0;
+	    while(a!=0){
+	        digit=a%10;
+	        int fact=1;
+	        for(int i=1;i<=digit;i++){
+	            fact=fact*i;
+	        }
+	        sum+=fact;
+	        a/=10;
+	    }
+	    if(sum==n){
+	        System.out.print("Strong number");
+	    }
+	    else{
+	        System.out.print("Not a Strong number");
+	    }
+	}
+}
