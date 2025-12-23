@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Menu");
+        System.out.println("1. Series: x^1 - x^2 + x^3 - ... - x^20 (x = 2)");
+        System.out.println("2. Series: 1, 11, 111, 1111");
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1:
+                int x = 2;
+                long sum = 0;
+                for (int i = 1; i <= 20; i++) {
+                    long term = (long) Math.pow(x, i);
+                    if (i % 2 == 0)
+                        sum -= term;
+                    else
+                        sum += term;
+                }
+                System.out.println("Sum = " + sum);
+                break;
+            case 2:
+                int n = 4; 
+                int num = 0;
+                for (int i = 1; i <= n; i++) {
+                    num = num * 10 + 1;
+                    System.out.print(num + " ");
+                }
+                break;
+            default:
+                System.out.println("Invalid Choice");
+        }
+    }
+}
