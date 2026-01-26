@@ -1,0 +1,65 @@
+/*  Single LinkedList using Delete From Begin  */
+import java.util.Scanner;
+
+class Node{
+    int data;
+    Node addr;
+
+    Node(int val){
+
+        data=val;
+        addr=null;
+    }
+}
+class Linked{
+    Node head;
+    Linked(){
+        head=null;
+    }
+    void insertAtBegin(int val){
+        Node newNode=new Node(val);
+        newNode.data=val;
+        newNode.addr=null;
+        newNode.addr=head;
+
+        head=newNode;
+    }
+    void deleteFromBegin(int val){
+        if(head==null){
+            System.out.println("Empty");
+            return;
+        }
+        head=head.addr;
+    }
+    void display(){
+        if(head==null){
+            System.out.println("empty");
+            return;
+
+        }
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp=temp.addr;
+        }
+        System.out.println();
+    }
+}
+public class LinkedList{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        Linked ll=new Linked();
+        int val;
+        do{
+            val=sc.nextInt();
+            if(val!=-1){
+                ll.insertAtBegin(val);
+            }
+        }
+            
+            while(val!=-1);
+            ll.display();
+            ll.deleteFromBegin(val);
+            ll.display();
+    }
+}
