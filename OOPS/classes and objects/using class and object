@@ -1,0 +1,205 @@
+/*
+
+Rohan is an automobile insurance agent who helps clients
+determine car insurance premiums based on various factors
+such as the car's price, age, and engine capacity. He needs a
+program that calculates both.
+. Third-Party Premium (TPP): based solely on engine
+capacity, and
+· Comprehensive Premium: based on car price, age,
+depreciation, Own Damage Premium (ODP), Insurance
+Cover Discount (ICD), and No Claim Bonus (NCB).
+Help Rohan develop a program that reads the required car
+details, computes all the necessary values, and prints a
+detailed premium breakdown.
+Create a class named Carinsurance with the following
+attributes:
+
+· price (int): Price of the car in rupees
+- age (int): Age of the car in years
+· capacity (int): Engine capacity in cc
+· location (string): Location of registration
+
+Methods
+1.calculateThirdPartyPremium()
+
+Calculates TPP based on engine capacity:
+. If capacity < 1000: TPP = 2182
+. If 1000 <= capacity ≤ 1500: TPP =3383
+. If capacity > 1500: TPP = 7890
+
+2. calculateComprehensivePremium()
+Depreciation Coefficient (dc) based on age:
+· for age 1 => depreciation percentage = 20%
+· for age 2 =› depreciation percentage = 30%
+· for age 3 => depreciation percentage = 40%
+· for age 4 => depreciation percentage = 50%
+· for age greater than or equal to 5 => depreciation
+percentage = 0%
+Calculating the Insured Declared Value (IDV) of the car by
+reducing the original price based on the depreciation
+coefficient (dc).
+
+IDV = price - (dc * price)
+
+Calculate Own Damage Premium (ODP) based on percent:
+· if age is less than or equal to 3 => percent =3.127%
+· if age is greater than 3 => percent =3.283%
+1. ODP = percent * IDV
+2. Insurance Cover Discount (ICD) = 50% of ODP
+3. No Claim Bonus (NCB) = 25% of ICD
+4. Personal Accident Cover (PAC) = ₴100
+5. Comprehensive Premium = NCB + PAC
+
+input
+
+The input consists of the price(int), age(int), capacity(int), and
+location(string), separated by a space.
+
+
+Output format :
+
+The output prints the details in the first line, separated by a
+space.
+
+The second line prints the Third-Party Premium (tpp), which is
+determined based on the engine capacity.
+
+The third line prints the Insured Declared Value (idv), calculated
+by considering depreciation based on the car's age.
+
+The fourth line prints the Own Damage Premium (odp),
+calculated as a percentage of the IDV.
+
+The fifth line prints the Insurance Cover Discount (icd), which is
+50% of ODP.
+
+The sixth line prints the No Claim Bonus (ncb), which is 25% of
+ICD.
+
+The seventh and final line prints the Final Comprehensive
+Premium, calculated as the sum of NCB and a fixed Personal
+Accident Cover (pac =100).
+[Note: The final results for TPP,IDV, ODP, ICD, NCB, and
+Comprehensive Premium should be printed as integers without
+decimal points.]
+
+Input 1:
+
+416000 3 1200 chennai
+
+Output 1:
+
+416000 3 1200 chennai
+3383
+249600
+7488
+3744
+936
+1036
+
+
+Input 2:
+
+115000 10 900 hosur
+
+output 2:
+
+115000 10 900 hosur
+2182
+115000
+3450
+1725
+431
+531
+
+
+
+*/
+
+
+import java.util.Scanner;
+
+class Insurance {
+
+    int price, age, cap;
+    String location;
+
+    int idv, odp, icd, ncb, finalAmount;
+
+    void getInput() {
+        Scanner sc = new Scanner(System.in);
+        price = sc.nextInt();
+        age = sc.nextInt();
+        cap = sc.nextInt();
+        location = sc.next();
+    }
+
+    void displayInput() {
+        System.out.println(price + " " + age + " " + cap + " " + location);
+    }
+
+    void calculateTPP() {
+        if (cap < 1000)
+            System.out.println(2182);
+        else if (cap <= 1500)
+            System.out.println(3383);
+        else
+            System.out.println(7890);
+    }
+
+    void calculateIDV() {
+        double dep;
+
+        if (age == 1)
+            dep = 0.20;
+        else if (age == 2)
+            dep = 0.30;
+        else if (age == 3)
+            dep = 0.40;
+        else if (age == 4)
+            dep = 0.50;
+        else
+            dep = 0.0;
+
+        idv = (int) (price - (price * dep));
+        System.out.println(idv);
+    }
+
+    void calculateODP() {
+        double rate;
+
+        if (age <= 3)
+            rate = 0.03;
+        else
+            rate = 0.03;
+
+        odp = (int) (idv * rate);
+        System.out.println(odp);
+    }
+
+    void calculateFinal() {
+        icd = odp / 2;
+        System.out.println(icd);
+
+        ncb = icd / 4;
+        System.out.println(ncb);
+
+        finalAmount = ncb + 100;
+        System.out.println(finalAmount);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Insurance obj = new Insurance();
+
+        obj.getInput();
+        obj.displayInput();
+        obj.calculateTPP();
+        obj.calculateIDV();
+        obj.calculateODP();
+        obj.calculateFinal();
+    }
+}
