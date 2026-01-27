@@ -97,6 +97,19 @@ Output 1:
 6.936
 7.1036
 
+Input 2:
+
+115000 10 900 hosur
+
+output 2:
+
+115000 10 900 hosur
+2182
+115000
+3450
+1725
+431
+531
 
 */
 import java.util.Scanner;
